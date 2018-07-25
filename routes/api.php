@@ -20,18 +20,24 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::resource('pemandus', 'PemanduAPIController');
 
-Route::resource('bahasas', 'BahasaAPIController');
+Route::post('createwisatawan', 'PemanduAPIController@store');
 
-Route::resource('destinasis', 'DestinasiAPIController');
+Route::resource('bahasa', 'BahasaAPIController');
+
+Route::resource('destinasi', 'DestinasiAPIController');
 
 Route::resource('wisatawans', 'WisatawanAPIController');
 
-Route::resource('pemandu_bs', 'PemanduBAPIController');
+Route::resource('pemandu', 'PemanduBAPIController');
 
 Route::resource('bahasa_pemandus', 'BahasaPemanduAPIController');
 
 Route::resource('destinasi_pemandus', 'DestinasiPemanduAPIController');
-
+-
 Route::resource('histories', 'HistoryAPIController');
 
 Route::resource('beritas', 'BeritaAPIController');
+
+Route::post('login', 'Loginwisatawan@store');
+
+Route::post('allwisatawan', 'LoginController@store');

@@ -60,5 +60,10 @@ class Pemandu extends Model
         'password' => 'required'
     ];
 
+    // public function Userame($userame,$password)
+    // {
+    //     return userame,password;
+    // }
+
     
 }
