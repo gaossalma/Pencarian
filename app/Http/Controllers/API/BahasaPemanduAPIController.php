@@ -43,6 +43,18 @@ class BahasaPemanduAPIController extends AppBaseController
         return $this->sendResponse($bahasaPemandus->toArray(), 'Bahasa Pemandus retrieved successfully');
     }
 
+    public function getBahasa(Request $request)
+    {
+        $data;
+        $data = $request->id_bahasa;
+        $bahasaPemandus;
+        foreach ($data as $key => $value) {
+        }
+
+        $bahasaPemandus = BahasaPemandu::with('pemandu', 'bahasa')->whereIn('id_bahasa', $data)->get();
+        return $this->sendResponse($bahasaPemandus->toArray(), 'bahasaPemandus retrieved successfully');
+    }
+
     /**
      * Store a newly created BahasaPemandu in storage.
      * POST /bahasaPemandus

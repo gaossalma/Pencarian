@@ -66,5 +66,13 @@ class PemanduB extends Model
         'password' => 'required'
     ];
 
-    
+    public function bahasa()
+    {
+        return $this->hasMany('App\Models\Bahasa','id');
+    }
+
+    public function destinasi()
+    {
+        return $this->hasMany('App\Models\Destinasi','id');
+    }
 }

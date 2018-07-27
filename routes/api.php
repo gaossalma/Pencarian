@@ -22,6 +22,10 @@ Route::resource('pemandus', 'PemanduAPIController');
 
 Route::post('createwisatawan', 'PemanduAPIController@store');
 
+Route::post('bahasapemandu','BahasaPemanduAPIController@getBahasa');
+
+Route::post('destinasipemandu','DestinasiPemanduAPIController@getDestinasiPemandu');
+
 Route::resource('bahasa', 'BahasaAPIController');
 
 Route::resource('destinasi', 'DestinasiAPIController');

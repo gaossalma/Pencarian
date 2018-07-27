@@ -45,5 +45,13 @@ class BahasaPemandu extends Model
         'id_bahasa' => 'required'
     ];
 
-    
+    public function bahasa()
+    {
+        return $this->belongsTo('App\Models\Bahasa','id_bahasa');
+    }
+
+     public function pemandu()
+    {
+        return $this->belongsTo('App\Models\PemanduB','id_pemanduB');
+    }    
 }

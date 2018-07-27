@@ -60,6 +60,19 @@ class DestinasiPemanduAPIController extends AppBaseController
         return $this->sendResponse($destinasiPemandus->toArray(), 'Destinasi Pemandu saved successfully');
     }
 
+    public function getDestinasiPemandu(Request $request)
+    {
+        $data;
+        $data = $request->id_destinasi;
+        // dd($data);
+        $destinasi;
+        foreach ($data as $key => $value) {
+        }
+        $destinasi = DestinasiPemandu::with('pemandu','destinasi')->whereIn('id_destinasi',$data)->get();
+
+        return $this->sendResponse($destinasi->toArray(), 'Cfs retrieved successfully');
+    }
+
     /**
      * Display the specified DestinasiPemandu.
      * GET|HEAD /destinasiPemandus/{id}

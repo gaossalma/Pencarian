@@ -45,5 +45,13 @@ class DestinasiPemandu extends Model
         'id_destinasi' => 'required'
     ];
 
-    
+    public function destinasi()
+    {
+        return $this->belongsTo('App\Models\Destinasi','id_destinasi');
+    }
+
+     public function pemandu()
+    {
+        return $this->belongsTo('App\Models\PemanduB','id_pemanduB');
+    }    
 }
